@@ -1,0 +1,18 @@
+# Jenv
+.java-version
+
+# Branch switching
+generated/
+
+#VS Code
+.factorypath
+.project
+
+#terraform files
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+.terraform.lock.*
+
+#MacOs file
+*.DS_Store

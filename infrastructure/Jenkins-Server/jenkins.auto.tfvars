@@ -1,0 +1,8 @@
+mykey = "spolat"
+ami = "ami-04581fbf744a7d11f"
+region = "us-east-1"
+instance_type = "t3a.medium"
+jenkins_server_secgr = "insider-jenkins-server-secgr"
+jenkins-server-tag = "Jenkins Server of Insider"
+jenkins-profile = "insider-jenkins-server-profile"
+jenkins-role = "insider-jenkins-server-role"

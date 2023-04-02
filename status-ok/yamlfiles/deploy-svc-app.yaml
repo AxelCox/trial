@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: status-ok
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: status-ok
+  template:
+    metadata:
+      labels:
+        name: status-ok
+    spec:
+      containers:
+      - image: axelcox/status-ok
+        name: status-ok-container
+        ports:
+        - containerPort: 3333
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: status-ok-svc
+spec:
+  selector:
+    name: status-ok
+  type: LoadBalancer
+  ports:
+   - name: http
+     port: 80
+     targetPort: 3333
+     protocol: TCP
