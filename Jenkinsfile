@@ -51,10 +51,7 @@ pipeline {
         stage('Create Cluster with EKS') {
             steps {
                 echo 'Creating EKS Cluster for Dev Environment'
-                sh """
-                    cd infrastructure
-                    eksctl create cluster -f cluster.yaml
-                """
+                sh "aws eks describe-cluster --name insider-cluster --query 'cluster.name' || eksctl create cluster -f ./infrastructure/cluster.yaml"
             }
         }
 
